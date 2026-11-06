@@ -5,20 +5,24 @@ public class StarCollectible extends GameObject {
     private final int speed;
     private boolean collected;
 
+    // Constructor for the collectible star as well as setting the x and y data
     public StarCollectible(int x, int y, int speed) {
         super(x, y, 20, 20);
         this.speed = speed;
         collected = false;
     }
 
+    //for setting the X to minus the speed
     @Override
     public void update() {
         setX(getX() - speed);
     }
 
+    //Methods for the Collecting of stars
     public boolean isCollected() { return collected; }
     public void collect() { collected = true; }
 
+    //For the Graphics Renderable to check what the Graphic Design the Star will look like
     @Override
     public void draw(Graphics2D g2) {
         if (collected) return;
